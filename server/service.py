@@ -6,8 +6,10 @@ from utils.logging import ( logger )
 from server.handlers.SetColor import (SetColor)
 from HAL.LedStrip import (LedStrip)
 
+MAX_WORKERS = 10
+
 def serve(port):
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=MAX_WORKERS))
     led_controller_pb2_grpc.add_LEDControllerServicer_to_server(LEDControllerServicer(SetColor(LedStrip())), server)
     server.add_insecure_port(f"localhost:{port}")
     server.start()
