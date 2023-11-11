@@ -2,14 +2,9 @@ syntax = "proto3";
 
 package led_controller;
 
+import public "ColorRequest.proto";
+import public "ColorResponse.proto";
+
 service LEDController {
   rpc SetColor (ColorRequest) returns (ColorResponse);
-}
-
-message ColorRequest {
-  string color = 1;
-}
-
-message ColorResponse {
-  string status = 1;
 }

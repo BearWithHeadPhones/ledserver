@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package led_controller;
+
+message ColorResponse {
+  string status = 1;
+}

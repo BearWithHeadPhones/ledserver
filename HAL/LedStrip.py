@@ -18,7 +18,7 @@ class LedStrip:
         logger.debug("setting color")
         for i in range(self.strip.numPixels()):
             self.strip.setPixelColor(i, color)
-            self.strip.show()
+        self.strip.show()    
 
 
 

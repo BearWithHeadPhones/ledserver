@@ -11,19 +11,19 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+import ColorRequest_pb2 as ColorRequest__pb2
+import ColorResponse_pb2 as ColorResponse__pb2
 
+from ColorRequest_pb2 import *
+from ColorResponse_pb2 import *
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14led_controller.proto\x12\x0eled_controller\"\x1d\n\x0c\x43olorRequest\x12\r\n\x05\x63olor\x18\x01 \x01(\t\"\x1f\n\rColorResponse\x12\x0e\n\x06status\x18\x01 \x01(\t2X\n\rLEDController\x12G\n\x08SetColor\x12\x1c.led_controller.ColorRequest\x1a\x1d.led_controller.ColorResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14led_controller.proto\x12\x0eled_controller\x1a\x12\x43olorRequest.proto\x1a\x13\x43olorResponse.proto2X\n\rLEDController\x12G\n\x08SetColor\x12\x1c.led_controller.ColorRequest\x1a\x1d.led_controller.ColorResponseP\x00P\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'led_controller_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
-  _globals['_COLORREQUEST']._serialized_start=40
-  _globals['_COLORREQUEST']._serialized_end=69
-  _globals['_COLORRESPONSE']._serialized_start=71
-  _globals['_COLORRESPONSE']._serialized_end=102
-  _globals['_LEDCONTROLLER']._serialized_start=104
-  _globals['_LEDCONTROLLER']._serialized_end=192
+  _globals['_LEDCONTROLLER']._serialized_start=81
+  _globals['_LEDCONTROLLER']._serialized_end=169
 # @@protoc_insertion_point(module_scope)

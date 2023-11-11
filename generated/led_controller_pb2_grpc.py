@@ -2,7 +2,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import led_controller_pb2 as led__controller__pb2
+import ColorRequest_pb2 as ColorRequest__pb2
+import ColorResponse_pb2 as ColorResponse__pb2
 
 
 class LEDControllerStub(object):
@@ -16,8 +17,8 @@ class LEDControllerStub(object):
         """
         self.SetColor = channel.unary_unary(
                 '/led_controller.LEDController/SetColor',
-                request_serializer=led__controller__pb2.ColorRequest.SerializeToString,
-                response_deserializer=led__controller__pb2.ColorResponse.FromString,
+                request_serializer=ColorRequest__pb2.ColorRequest.SerializeToString,
+                response_deserializer=ColorResponse__pb2.ColorResponse.FromString,
                 )
 
 
@@ -35,8 +36,8 @@ def add_LEDControllerServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'SetColor': grpc.unary_unary_rpc_method_handler(
                     servicer.SetColor,
-                    request_deserializer=led__controller__pb2.ColorRequest.FromString,
-                    response_serializer=led__controller__pb2.ColorResponse.SerializeToString,
+                    request_deserializer=ColorRequest__pb2.ColorRequest.FromString,
+                    response_serializer=ColorResponse__pb2.ColorResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -60,7 +61,7 @@ class LEDController(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/led_controller.LEDController/SetColor',
-            led__controller__pb2.ColorRequest.SerializeToString,
-            led__controller__pb2.ColorResponse.FromString,
+            ColorRequest__pb2.ColorRequest.SerializeToString,
+            ColorResponse__pb2.ColorResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
