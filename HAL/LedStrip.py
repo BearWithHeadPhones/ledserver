@@ -1,12 +1,12 @@
-from rpi_ws281x import PixelStrip, Color
+from rpi_ws281x import PixelStrip
 from utils.logging import ( logger )
 
 # LED strip configuration
-LED_COUNT = 200  # Number of LEDs on your strip
+LED_COUNT = 180  # Number of LEDs on your strip
 LED_PIN = 18    # GPIO pin connected to the data input of the LED strip
 LED_FREQ_HZ = 800000
 LED_DMA = 5
-LED_BRIGHTNESS = 150
+LED_BRIGHTNESS = 200
 
 class LedStrip:
     def __init__(self):
